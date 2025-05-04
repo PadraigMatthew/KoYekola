@@ -1,0 +1,159 @@
+// Variables principales
+$dominant-color: #F77B36; // Couleur de fond principale
+$text-color: #000000; // Texte noir
+$footer-color: darken($dominant-color, 15%); // Footer plus foncé
+$font-family: 'Poppins', 'Arial', sans-serif;
+
+// Reset global
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: $font-family;
+    background-color: $dominant-color;
+    color: $text-color;
+    scroll-behavior: smooth;
+}
+
+// Container général
+.container {
+    background-color: $dominant-color;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+// Titres
+h1, h2, h3 {
+    color: $text-color;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 3.5rem;
+}
+
+h3 {
+    -size: 1.8rem;
+}
+
+// Paragraphes
+p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+// Images
+.image-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0,2rem;
+  margin: 2rem 0;
+
+  img {
+    width: 40%;
+    max-width: 35%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    margin: 100px;
+    border-top: 0px;
+  }
+}
+
+.durée img {
+  display: block;
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  margin: 2rem auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+// Sections
+.Bienvenue, .Mission, .Atteindre {
+    background-color: $dominant-color;
+    margin: 3rem 0;
+    padding: 2rem 1rem;
+    border-radius: 20px;
+    text-align: center;
+}
+
+// Footer
+footer {
+    margin-top: 4rem;
+    padding: 2rem 1rem;
+    background-color: $footer-color;
+    color: $text-color;
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 20px 20px 0 0;
+
+  p {
+    margin: 0.5rem 0;
+  }
+
+  a {
+    color: $text-color;
+    text-decoration: underline;
+    font-weight: bold;
+
+    &:hover {
+      color: darken($text-color, 20%);
+    }
+  }
+}
+
+// Effet fade-in pour moderniser l'apparition
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+    animation: fadeInUp 1s ease forwards;
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  img {
+    max-width: 250px;
+  }
+
+  .image-row {
+    flex-direction: column;
+  }
+
+  .container {
+    width: 95%;
+  }
+
+  footer {
+    padding: 1.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
